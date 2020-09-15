@@ -22,7 +22,7 @@ PATH = '<path to the application with it's name eg: /home/nikhil/Desktop/VSCode>
 
 def on_press(key):
   if key == Key.f5:# im using F5 as the hot-key, you can use anything
-    subprocess.open(PATH)
+    subprocess.run(PATH)
   
 def on_release(key):# Escape closes the program
   if key == Key.esc:
