@@ -1,4 +1,5 @@
 import os
+os.system('pip3 install Pillow')
 from PIL import Image, ImageFilter
 
 image = Image.open('something.png')  # image object
