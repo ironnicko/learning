@@ -7,7 +7,7 @@ from pynput.keyboard import Key, Listener
 # print the keys
 
 def on_press(key):
-  print(f'{key was pressed}')
+  print(f'{key} was pressed')
   
 def on_release(key):
   if key == Key.esc:# Escape closes the program
