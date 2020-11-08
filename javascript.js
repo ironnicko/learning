@@ -40,7 +40,13 @@ let a = "nikhil";
 
 console.log(a.length)// a function to find the length of the item
 
-// string slicing*/
+// string slicing
 
 const a = "Nikhil";
-console.log(a[3]);
+console.log(a[3]);*/
+
+// string functions
+
+console.log("GG man".toUpperCase());
+console.log("HEY".toLowerCase());
+console.log("man".endsWith("n"));
