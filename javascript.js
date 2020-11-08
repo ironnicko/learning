@@ -1,5 +1,5 @@
 // Wass up
-/*
+
 console.log("Hello");
 
 console.log("Kill you")
@@ -29,4 +29,4 @@ first = 1;
 second = 2;
 third = 3;
 mix = [first, second, third];
-console.log(mix);*/
+console.log(mix);
