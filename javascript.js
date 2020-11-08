@@ -1,4 +1,4 @@
-// Wass up
+/*// Wass up
 
 console.log("Hello");
 
@@ -30,3 +30,10 @@ second = 2;
 third = 3;
 mix = [first, second, third];
 console.log(mix);
+console.log("wassup", "lessgedid", 24);*/
+
+console.log(4 === 2*2);
+
+let a = "nikhil";
+
+console.log(a.length)// a function to find the length of the item
