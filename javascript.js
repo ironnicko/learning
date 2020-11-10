@@ -1,4 +1,4 @@
-/*// Wass up
+// Wass up
 
 console.log("Hello");
 
@@ -103,4 +103,4 @@ while(i<10){
 
 for (;i<10;){
   console.log(i);
-}*/
+}
