@@ -56,13 +56,16 @@ usern = input('name of user >>')
 message_ = input("message >>>")
 
 class bot:
-    def __init__(self, username, password, user, message):
+    def __init__(self, user, message):
         self.username = input('enter username')
         self.password = input('enter password')
         self.user = user
         self.message =  message
         self.base_url = 'https://www.instagram.com/'
-        self.bot = webdriver.Chrome(os.getcwd()+"/chromedriver")
+        try:
+            self.bot = webdriver.Chrome(os.getcwd()+"/chromedriver")
+        except:
+            self.bot = webdriver.Chrome(os.getcwd()+r'\chromedriver.exe')
         self.login()
 
 
