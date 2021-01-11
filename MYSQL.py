@@ -2,10 +2,10 @@ import mysql.connector as m
 
 
 class main:
-    db = m.connect(user="user", password="password", host="localhost", autocommit=True)
+    db = m.connect(user="user", password="password", host="localhost", autocommit=True) # adding auto-commit reduces the burden of committing all the time
     def __init__(self):
         self.db = cls.db
-        self.curf = lambda: self.db.cursor()
+        self.curf = lambda: self.db.cursor() # this make the job of closing cursors
         try:
             cur = self.curf()
             cur.execute("CREATE DATABASE IF NOT EXISTS test")
@@ -52,11 +52,30 @@ class main:
                 cur.execute("DELETE FROM test WHERE no=%d"%no)
             else:
                 cur.execute("DELETE FROM test")
-##    def update(self, roll, name=None):
-        
+        except Exception as e:
+            print(e)
+
+        finally:
+            cur.close()
+            
+    def update(self, roll):
+        try:
+            cur = self.curf()
+            cur.execute("UPDATE test SET name=%s)", input("Enter the name to be updated to:"))
+        except Exception as e:
+            print(e)
+        finally:
+            cur.close()
 
 if __name__ == "__main__":
-    print(main.read())
+    try:
+        data = main()
+        data.read()
+    except Exception as e:
+        print(e)
+    finally:
+        main.db.close()
+    
     
     
         
