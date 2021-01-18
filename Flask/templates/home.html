@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Home Page{% endblock %}
+{% block content %}
+{% for x in content%}
+	{% if x == "Nikhil" %}
+		<p>Admin:{{x}}</p>
+	{% else %}
+		<p>{{x}}</p>
+	{% endif %}
+{% endfor %}<br>
+<a href="/nowhere">Nowhere</a><br>
+<a href="/login">welcome page</a>
+<a href="/example">Denese you dumass</a>
+{% endblock %}

@@ -111,7 +111,7 @@ def render(fnt, what, color, where):
     screen.blit(text_to_show, where)
 
 
-def display_fps():
+def display_fps():.0
     "Data that will be rendered and blitted in _display"
     render(
         pygame.font.Font('Bristone.ttf', 32),
