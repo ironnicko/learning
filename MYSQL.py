@@ -2,33 +2,31 @@ import mysql.connector as m
 
 
 class main:
-    db = m.connect(user="user", password="password", host="localhost", autocommit=True) # adding auto-commit reduces the burden of committing all the time
-    def __init__(self):
-        self.db = cls.db
-        self.curf = lambda: self.db.cursor() # this make the job of closing cursors
-        try:
-            cur = self.curf()
-            cur.execute("CREATE DATABASE IF NOT EXISTS test")
-            cur.execute("USE test")
-            cur.execute("CREATE TABLE IF NOT EXISTS test(name VARCHAR(50), no INT(10) PRIMARY KEY)")
-        except Exception as e:
-            print(e)
-        finally:
-            cur.close()
+    db = m.connect(user="user", password="password", host="localhost", autocommit=True)
+    try:
+        cur = db.cursor()
+        cur.execute("CREATE DATABASE IF NOT EXISTS test")
+        cur.execute("USE test")
+        cur.execute("CREATE TABLE IF NOT EXISTS test(name VARCHAR(50), no INT(10) PRIMARY KEY)")
+    except Exception as e:
+        print(e)
+    finally:
+        cur.close()
         
-    def __str__(self):
+    def __str__():
         return "Database"
     
-    def add(self, name, no):
-        cur = self.curf()
+
+    def add(cls, name, no):
+        cur = cls.db.cursor()
         try:
-            cur.execute("INSERT INTO test VALUES ('%s', %d)"%(name, no))
+            cur.execute("INSERT INTO test VALUES ('%s', %d)", (name, no))
         except Exception as e:
             print(e)
         finally:
             cur.close()
 
-    @classmethod
+    @classmethod    
     def read(cls, no=None):
         try:
             cur = cls.db.cursor()
@@ -54,28 +52,28 @@ class main:
                 cur.execute("DELETE FROM test")
         except Exception as e:
             print(e)
-
         finally:
             cur.close()
-            
-    def update(self, roll):
+
+    @classmethod
+    def update(cls, roll, name):
         try:
-            cur = self.curf()
-            cur.execute("UPDATE test SET name=%s)", input("Enter the name to be updated to:"))
+            cur = cls.db.cursor()
+            cur.execute("USE test")
+            cur.execute("UPDATE test SET name='%s' WHERE no=%d"%(name, roll))
         except Exception as e:
             print(e)
         finally:
             cur.close()
 
+    @classmethod
+    def closedb(cls):
+        cls.db.close()
+                
 if __name__ == "__main__":
     try:
-        data = main()
-        data.read()
+        print(main.read())
     except Exception as e:
         print(e)
     finally:
-        main.db.close()
-    
-    
-    
-        
+        main().closedb()
