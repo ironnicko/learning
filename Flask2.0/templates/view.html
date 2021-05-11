@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}View All Users{% endblock %}
+{% block content %}
+	{% with messages = get_flashed_messages() %}
+		{% if messages %}
+			{% for x in messages %}
+				<p>{{x}}</p>
+			{% endfor %}
+		{% endif %}
+	{% endwith %}
+	{% for item in items %}
+		<p>Name: {{item.name}}, Email: {{item.email}}</p>
+	{% endfor %}
+{% endblock %}

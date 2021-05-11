@@ -20,7 +20,6 @@ def login():
 @app.route("/example")
 def example():
     return render_template("example.html")
-
     
 @app.route("/<usr>")
 def user(usr):

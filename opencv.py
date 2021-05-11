@@ -79,7 +79,7 @@ import numpy as np
 
 # cv.imshow('blue', black)
 
-# cv.rectangle(black, (0,0), (250, 250), (255, 255, 255), thickness=cv.FILLED)
+# cv.rectangle(black, (0,0), (250, 250), (255, 255, 255), thickness=cv.FILLED) #cv.rectangle(iamge, startPoint, endPoint, color[in 3-channels of BGR], thickness[in cv2 options])
 # cv.imshow('Rectangle', black)
 
 # cv.circle(black, (black.shape[1]//2, black.shape[0]//2), 40, (0, 0, 255), thickness=-1)
