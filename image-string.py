@@ -7,7 +7,7 @@ from webbrowser import open as website
 array = []
 l = []
 
-print("The available convertable images are: [if you dont find it here please copy-paste the image into the folder of the program]")
+print("The available convertable images are: [if you dont find it here please copy-paste the PNG-format of the image into the folder of the program]")
 
 for i in os.listdir():
     if i.endswith("png"):
