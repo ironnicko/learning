@@ -2,6 +2,7 @@ import os
 from PIL import Image
 import pyautogui
 from pytesseract import *
+from webbrowser import open as website
 
 array = []
 l = []
@@ -21,6 +22,7 @@ while True:
         pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
         img = Image.open(f"{array[ch]}")
         op = pytesseract.image_to_string(img)
+        website(f"https://www.google.com/search?={'+'.join(op.split())}")
         print(op)
         if input("Press 0 to exit") == "0":
             break
