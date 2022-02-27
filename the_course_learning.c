@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 /*int main()
 {
@@ -311,7 +312,7 @@ void op(int n, int j){
     printf("%d",n*j);
 
 }
-*/
+
 struct people{
     char name[100];
     char grade[3];
@@ -334,4 +335,22 @@ int main(){
 
     printf("%s\n", p1.name);
     printf("%s",p2.name);
+}
+*/
+struct Theo{
+    int roll;
+    char name[128];
+};
+
+int main(){
+    int n;
+    scanf("%d", &n);
+    struct Theo instance[n];
+    char name[128];
+    for (int i=0; i<n; i++){
+        scanf("%s", &name);
+        instance[i].roll= i;
+        strcpy(instance[i].name, name);
+        printf("%d %s\n", instance[i].roll, instance[i].name);
+    }
 }
