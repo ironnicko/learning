@@ -9,6 +9,4 @@ length = len(a)
 count = 0
 for i in a:
     count += 1 
-    print(i, end="")
-    if count != length:
-        print(", ", end="")
+    print(i, end=("", ", ")[count != length])
